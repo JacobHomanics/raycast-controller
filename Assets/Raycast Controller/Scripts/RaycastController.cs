@@ -27,6 +27,16 @@ namespace JacobHomanics.Core.Raycasts
         private Ray ray;
         private RaycastHit hit;
 
+        public Ray GetRay()
+        {
+            return ray;
+        }
+
+        public RaycastHit GetHit()
+        {
+            return hit;
+        }
+
         void Update()
         {
             if (!castOnUpdate) return;
