@@ -12,8 +12,11 @@ namespace JacobHomanics.Core.Raycasts
         public bool castOnUpdate = true;
 
         [Header("Debug")]
+        public bool showRay = true;
+
         public Color rayColor = Color.red;
         public Color rayHitColor = Color.green;
+        public bool showHitSphere = true;
         public Color sphereColor = Color.blue;
         public float hitSphereSize = 0.25f;
 
@@ -84,18 +87,23 @@ namespace JacobHomanics.Core.Raycasts
             if (Camera.main == null)
                 return;
 
+
             float maxDistance = Mathf.Min(distance, 10000f);
 
             Gizmos.color = rayColor;
-            Gizmos.DrawRay(ray.origin, ray.direction * maxDistance);
+            if (showRay)
+                Gizmos.DrawRay(ray.origin, ray.direction * maxDistance);
 
             // Draw the hit point
             if (hit.collider != null)
             {
                 Gizmos.color = rayHitColor;
-                Gizmos.DrawLine(ray.origin, hit.point);
+                if (showRay)
+                    Gizmos.DrawLine(ray.origin, hit.point);
                 Gizmos.color = sphereColor;
-                Gizmos.DrawWireSphere(hit.point, 0.25f); // Sphere size is adjustable
+
+                if (showHitSphere)
+                    Gizmos.DrawWireSphere(hit.point, 0.25f); // Sphere size is adjustable
             }
         }
     }
