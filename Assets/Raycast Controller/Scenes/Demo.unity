@@ -609,8 +609,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   castOnUpdate: 1
+  showRay: 1
   rayColor: {r: 1, g: 0, b: 0, a: 1}
   rayHitColor: {r: 0, g: 1, b: 0, a: 1}
+  showHitSphere: 1
   sphereColor: {r: 0, g: 0, b: 1, a: 1}
   hitSphereSize: 0.5
   OnEnter:
